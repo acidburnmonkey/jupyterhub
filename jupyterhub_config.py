@@ -26,6 +26,9 @@ c.DockerSpawner.notebook_dir = notebook_dir
 c.DockerSpawner.volumes = { 'jupyterhub-user-{username}': notebook_dir }
 c.DockerSpawner.image = "my-custom-jupyter-image"
 
+c.Spawner.cmd = ['sh', '-c', 'cp -n /etc/skel/sample.ipynb /home/jovyan/work/sample.ipynb && start-singleuser.sh']
+
+
 # Persistence
 c.Authenticator.allowed_users = set()
 # Enable user registration
